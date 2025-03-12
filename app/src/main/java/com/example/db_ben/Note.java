@@ -7,7 +7,6 @@ import androidx.room.PrimaryKey;
 public class Note {
     @PrimaryKey(autoGenerate = true)
     private int id;
-
     private String words;
     private Integer number;
     private String a_hoze;
@@ -18,19 +17,19 @@ public class Note {
         this.a_hoze = a_hoze;
     }
 
-    public int getId(){
+    public int getId() {
         return id;
     }
 
-    public void setId(int id){
+    public void setId(int id) {
         this.id = id;
     }
 
-    public Integer getNumber(){
+    public Integer getNumber() {
         return number;
     }
 
-    public  void setNumber(Integer number){
+    public void setNumber(Integer number) {
         this.number = number;
     }
 
