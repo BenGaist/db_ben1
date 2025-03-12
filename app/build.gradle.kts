@@ -42,16 +42,5 @@ dependencies {
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
 
-    // Force the correct version of annotations
-    implementation("org.jetbrains:annotations:13.0")
 
-    // Exclude old annotation version if coming from another dependency
-    configurations.all {
-        resolutionStrategy.eachDependency {
-            if (requested.group == "com.intellij" && requested.name == "annotations") {
-                useVersion("13.0")
-                because("Avoid duplicate annotation libraries")
-            }
-        }
-    }
 }
