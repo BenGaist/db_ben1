@@ -17,6 +17,7 @@ public class Note {
         this.a_hoze = a_hoze;
     }
 
+
     public int getId() {
         return id;
     }
