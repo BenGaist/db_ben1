@@ -16,8 +16,7 @@ public interface NoteDAO {
     void update(Note note);
     @Delete
     void delete(Note note);
-    @Query("SELECT * FROM notes WHERE id = :id")
-    Note getNoteByID(int id);
+
     @Query("SELECT * FROM notes")
     List<Note> getAllNotes();
 }

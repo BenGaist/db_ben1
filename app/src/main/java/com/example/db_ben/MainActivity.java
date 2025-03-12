@@ -47,12 +47,16 @@ public class MainActivity extends AppCompatActivity {
         button = findViewById(R.id.button);
 
 
-        Note sampleNote1 = new Note("hello",3,"30%");
-        noteDAO.insert(sampleNote1);
-        Note sampleNote2 = new Note("hi",4,"40%");
-        noteDAO.insert(sampleNote2);
-        Note sampleNote3 = new Note("yo",5,"60%");
-        noteDAO.insert(sampleNote3);
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                if (noteDAO.getAllNotes().isEmpty()) { // Avoid inserting duplicates
+                    noteDAO.insert(new Note("hello", 3, "30%"));
+                    noteDAO.insert(new Note("hi", 4, "40%"));
+                    noteDAO.insert(new Note("yo", 5, "60%"));
+                }
+            }
+        }).start();
 
 
         button.setOnClickListener(new View.OnClickListener() {

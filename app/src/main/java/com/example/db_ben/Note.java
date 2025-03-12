@@ -14,7 +14,6 @@ public class Note {
 
     public Note(String words, Integer number, String a_hoze) {
         this.words = words;
-        this.id = id;
         this.number = number;
         this.a_hoze = a_hoze;
     }
